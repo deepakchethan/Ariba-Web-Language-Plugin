@@ -1,18 +1,40 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.deepakchethan.aribaweblanguageplugin</id>
-    <name>AribaWebLanguagePlugin</name>
-    <vendor>deepakchethan</vendor>
+    <id>io.github.deepakchethan.language</id>
+    <name>Ariba Web Language</name>
+    <version>1.0</version>
+    <vendor email="deepakchethan@outlook.com" url="deepakchethan.github.io">Deepak Chethan</vendor>
 
+    <description><![CDATA[
+      This is a plugin that adds support to Ariba Web Language
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Newly introducing a plugin for AWL, its getting annoying working with it without autocompletion and syntax checking
+    ]]>
+    </change-notes>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.deepakchethan.aribaweblanguageplugin.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.deepakchethan.aribaweblanguageplugin.services.MyProjectService"/>
+        <fileType
+                name="Ariba Web Lanaguage"
+                implementationClass="com.github.deepakchethan.aribaweblanguageplugin.language.AWLFileType"
+                fieldName="INSTANCE"
+                language="Awl"
+                extensions="awl"/>
+
+        <lang.parserDefinition
+                language="Awl"
+                implementationClass="com.github.deepakchethan.aribaweblanguageplugin.language.AWLParserDefinition"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.deepakchethan.aribaweblanguageplugin.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+
 </idea-plugin>
