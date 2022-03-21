@@ -6,7 +6,7 @@ import javax.swing.Icon
 
 object AWLFileType: LanguageFileType(AWLLanguage) {
 
-    override fun getName(): String = "AWL Plugin";
+    override fun getName(): String = "Ariba Web Language";
 
     override fun getDescription(): String = "AWL Plugin for AWL development"
 

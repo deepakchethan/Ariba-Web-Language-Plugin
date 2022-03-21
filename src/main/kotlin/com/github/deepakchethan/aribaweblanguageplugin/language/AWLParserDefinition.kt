@@ -15,7 +15,7 @@ class AWLParserDefinition: HTMLParserDefinition() {
 
     override fun createLexer(project: Project?): Lexer = AWLLexer
 
-    override fun createParser(project: Project?): PsiParser = AWLParser()
+    override fun createParser(project: Project?): PsiParser = AWLParser
 
     override fun getFileNodeType(): IFileElementType = IFileElementType(AWLLanguage)
 

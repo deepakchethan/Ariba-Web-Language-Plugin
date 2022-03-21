@@ -22,7 +22,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <fileType
-                name="Ariba Web Lanaguage"
+                name="Ariba Web Language"
                 implementationClass="com.github.deepakchethan.aribaweblanguageplugin.language.AWLFileType"
                 fieldName="INSTANCE"
                 language="Awl"
@@ -35,6 +35,10 @@
         <lang.syntaxHighlighterFactory
                 language="Awl"
                 implementationClass="com.github.deepakchethan.aribaweblanguageplugin.language.highlighter.AWLSyntaxHighlighterFactory"/>
+
+        <lang.commenter
+                language="Awl"
+                implementationClass="com.github.deepakchethan.aribaweblanguageplugin.language.commenter.AWLCommenter"/>
     </extensions>
 
     <actions>

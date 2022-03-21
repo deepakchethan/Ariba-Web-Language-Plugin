@@ -11,5 +11,4 @@ class AWLFile(viewProvider: FileViewProvider): PsiFileBase(viewProvider, AWLLang
     override fun getFileType(): FileType = AWLFileType
 
     override fun toString(): String = "AWL File"
-
 }
