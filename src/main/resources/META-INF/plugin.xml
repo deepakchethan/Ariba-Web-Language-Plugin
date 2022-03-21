@@ -31,6 +31,10 @@
         <lang.parserDefinition
                 language="Awl"
                 implementationClass="com.github.deepakchethan.aribaweblanguageplugin.language.AWLParserDefinition"/>
+
+        <lang.syntaxHighlighterFactory
+                language="Awl"
+                implementationClass="com.github.deepakchethan.aribaweblanguageplugin.language.highlighter.AWLSyntaxHighlighterFactory"/>
     </extensions>
 
     <actions>
