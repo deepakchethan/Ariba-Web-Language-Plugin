@@ -1,0 +1,21 @@
+{
+  parserClass="com.github.deepakchethan.aribaweblanguageplugin.language._AWLParser"
+  parserUtilClass="com.github.deepakchethan.aribaweblanguageplugin.language._AWLParserUtil"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="AWL"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.github.deepakchethan.aribaweblanguageplugin.language.psi"
+  psiImplPackage="com.github.deepakchethan.aribaweblanguageplugin.language.psi.impl"
+
+  elementTypeHolderClass="com.github.deepakchethan.aribaweblanguageplugin.language.AWLTypes"
+  elementTypeClass="com.github.deepakchethan.aribaweblanguageplugin.language.psi.AWLElementType"
+  tokenTypeClass="com.github.deepakchethan.aribaweblanguageplugin.language.psi.AWLTokenType"
+}
+
+HTMLFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY
