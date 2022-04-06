@@ -42,6 +42,11 @@
 
         <colorSettingsPage
                 implementation="com.github.deepakchethan.aribaweblanguageplugin.language.highlighter.AWLColorsPage"/>
+
+        <completion.contributor
+                language="Awl"
+                implementationClass="com.github.deepakchethan.aribaweblanguageplugin.language.completion.AWLCompletionContributor"/>
+
     </extensions>
 
     <actions>
