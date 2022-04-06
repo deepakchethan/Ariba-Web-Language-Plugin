@@ -39,6 +39,9 @@
         <lang.commenter
                 language="Awl"
                 implementationClass="com.github.deepakchethan.aribaweblanguageplugin.language.commenter.AWLCommenter"/>
+
+        <colorSettingsPage
+                implementation="com.github.deepakchethan.aribaweblanguageplugin.language.highlighter.AWLColorsPage"/>
     </extensions>
 
     <actions>

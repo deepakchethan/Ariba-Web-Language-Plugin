@@ -1,8 +1,8 @@
 package com.github.deepakchethan.aribaweblanguageplugin.language.highlighter
 
-import com.intellij.lang.html.HtmlSyntaxHighlighterFactory
+import com.intellij.openapi.fileTypes.SingleLazyInstanceSyntaxHighlighterFactory
 import com.intellij.openapi.fileTypes.SyntaxHighlighter
 
-class AWLSyntaxHighlighterFactory: HtmlSyntaxHighlighterFactory() {
+class AWLSyntaxHighlighterFactory: SingleLazyInstanceSyntaxHighlighterFactory() {
     override fun createHighlighter(): SyntaxHighlighter = AWLSyntaxHighlighter()
 }

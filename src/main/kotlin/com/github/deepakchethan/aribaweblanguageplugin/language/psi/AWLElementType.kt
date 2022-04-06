@@ -1,7 +1,10 @@
 package com.github.deepakchethan.aribaweblanguageplugin.language.psi
 
 import com.github.deepakchethan.aribaweblanguageplugin.language.AWLLanguage
+import com.github.deepakchethan.aribaweblanguageplugin.language.psi.impl.AWLPropertyImpl
+import com.intellij.lang.ASTNode
 import com.intellij.lang.dtd.DTDLanguage
+import com.intellij.psi.PsiElement
 import com.intellij.psi.TokenType
 import com.intellij.psi.tree.IElementType
 import com.intellij.psi.tree.IFileElementType
@@ -13,6 +16,7 @@ class AWLElementType(id: String): IElementType(id, AWLLanguage) {
         @JvmField var AWL_DOCUMENT: IElementType = IAWLElementType("AWL_DOCUMENT")
         @JvmField var AWL_TAG: IElementType = IAWLElementType("AWL_TAG")
         @JvmField var AWL_PROLOG: IElementType = IAWLElementType("AWL_PROLOG")
+        @JvmField var AWL_TEXT: IElementType = IAWLElementType("AWL_TEXT")
         @JvmField var AWL_DECL: IElementType = IAWLElementType("AWL_DECL")
         @JvmField var AWL_DOCTYPE: IElementType = IAWLElementType("AWL_DOCTYPE")
         @JvmField var AWL_ATTRIBUTE: IElementType = IAWLElementType("AWL_ATTRIBUTE")
@@ -111,5 +115,7 @@ class AWLElementType(id: String): IElementType(id, AWLLanguage) {
 
         @JvmField var COMMENTS = TokenSet.create(AWL_COMMENT_START, AWL_COMMENT_CHARACTERS, AWL_COMMENT_END)
         @JvmField var WHITESPACES = TokenSet.create(AWL_WHITE_SPACE)
+
+        fun createElement(node: ASTNode): PsiElement = AWLPropertyImpl(node)
     }
 }

@@ -1,5 +1,5 @@
 package com.github.deepakchethan.aribaweblanguageplugin.language.psi
 
-import com.intellij.lexer.HtmlLexer
+import com.github.deepakchethan.aribaweblanguageplugin.language._AWLLexer
 
-object AWLLexer: HtmlLexer()
+object AWLLexer: _AWLLexer()
