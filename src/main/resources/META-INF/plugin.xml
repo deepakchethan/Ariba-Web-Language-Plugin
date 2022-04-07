@@ -30,7 +30,7 @@
 
         <lang.parserDefinition
                 language="Awl"
-                implementationClass="com.github.deepakchethan.aribaweblanguageplugin.language.AWLParserDefinition"/>
+                implementationClass="com.github.deepakchethan.aribaweblanguageplugin.language.parser.AWLParserDefinition"/>
 
         <lang.syntaxHighlighterFactory
                 language="Awl"
@@ -42,6 +42,10 @@
 
         <colorSettingsPage
                 implementation="com.github.deepakchethan.aribaweblanguageplugin.language.highlighter.AWLColorsPage"/>
+
+        <completion.contributor
+                language="Awl"
+                implementationClass="com.github.deepakchethan.aribaweblanguageplugin.language.completion.AWLCompletionContributor"/>
 
         <completion.contributor
                 language="Awl"

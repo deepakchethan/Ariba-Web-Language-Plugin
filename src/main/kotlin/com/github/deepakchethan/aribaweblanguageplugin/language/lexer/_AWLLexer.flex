@@ -1,12 +1,6 @@
 package com.github.deepakchethan.aribaweblanguageplugin.language;
 
-import com.intellij.lexer.FlexLexer;
 import com.intellij.psi.tree.IElementType;
-
-import static com.intellij.psi.TokenType.BAD_CHARACTER;
-import static com.intellij.psi.TokenType.WHITE_SPACE;
-import static com.github.deepakchethan.aribaweblanguageplugin.language.AWLTypes.*;
-import com.github.deepakchethan.aribaweblanguageplugin.language.psi.AWLElementType;
 
 %%
 
@@ -107,7 +101,7 @@ CONDITIONAL_COMMENT_CONDITION=({ALPHA})({ALPHA}|{WHITE_SPACE_CHARS}|{DIGIT}|"."|
 <BEFORE_TAG_ATTRIBUTES, TAG_ATTRIBUTES, TAG_CHARACTERS> ">" { yybegin(YYINITIAL); return AWLElementType.AWL_TAG_END; }
 <BEFORE_TAG_ATTRIBUTES, TAG_ATTRIBUTES, TAG_CHARACTERS> "/>" { yybegin(YYINITIAL); return AWLElementType.AWL_EMPTY_ELEMENT_END; }
 <BEFORE_TAG_ATTRIBUTES> {WHITE_SPACE_CHARS} { yybegin(TAG_ATTRIBUTES); return AWLElementType.AWL_WHITE_SPACE;}
-<TAG_ATTRIBUTES> {ATTRIBUTE_NAME} { return AWLElementType.AWL_NAME; }
+<TAG_ATTRIBUTES> {ATTRIBUTE_NAME} { return AWLElementType.AWL_ATTRIBUTE_NAME; }
 <TAG_ATTRIBUTES> "=" { yybegin(ATTRIBUTE_VALUE_START); return AWLElementType.AWL_EQ; }
 <BEFORE_TAG_ATTRIBUTES, TAG_ATTRIBUTES, START_TAG_NAME, END_TAG_NAME> [^] { yybegin(YYINITIAL); yypushback(1); break; }
 

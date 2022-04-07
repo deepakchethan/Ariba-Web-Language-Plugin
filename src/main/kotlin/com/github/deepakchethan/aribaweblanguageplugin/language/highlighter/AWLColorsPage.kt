@@ -30,7 +30,7 @@ class AWLColorsPage: ColorSettingsPage {
         ),
         AttributesDescriptor(
             "Attribute value",
-            AWLHighlighterColors.AWL_ATTRIBUTE_NAME
+            AWLHighlighterColors.AWL_ATTRIBUTE_VALUE
         ),
         AttributesDescriptor(
             "Entity reference",

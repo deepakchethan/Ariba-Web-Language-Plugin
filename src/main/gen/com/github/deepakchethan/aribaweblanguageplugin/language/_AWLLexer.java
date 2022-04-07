@@ -4,7 +4,6 @@ package com.github.deepakchethan.aribaweblanguageplugin.language;
 
 import com.intellij.lexer.FlexLexer;
 import com.intellij.psi.tree.IElementType;
-import com.github.deepakchethan.aribaweblanguageplugin.language.psi.AWLElementType;
 
 
 /**
@@ -179,8 +178,8 @@ public class _AWLLexer implements FlexLexer {
     "\1\25\2\24\1\2\1\26\1\4\3\27\1\30\1\7"+
     "\3\30\1\31\1\32\1\0\1\33\1\34\14\0\1\34"+
     "\1\35\1\21\2\0\1\36\2\0\1\37\1\40\12\0"+
-    "\1\41\1\0\1\42\1\43\1\0\1\44\3\0\1\17"+
-    "\1\45\1\4\3\0\1\46\2\0\1\47";
+    "\1\41\1\0\1\42\1\43\1\0\1\44\3\0\1\45"+
+    "\1\46\1\4\3\0\1\47\2\0\1\50";
 
   private static int [] zzUnpackAction() {
     int [] result = new int[122];
@@ -684,37 +683,37 @@ public class _AWLLexer implements FlexLexer {
             { return AWLElementType.AWL_DATA_CHARACTERS;
             } 
             // fall through
-          case 40: break;
+          case 41: break;
           case 2: 
             { return AWLElementType.AWL_PI_TARGET;
             } 
             // fall through
-          case 41: break;
+          case 42: break;
           case 3: 
             { return AWLElementType.AWL_REAL_WHITE_SPACE;
             } 
             // fall through
-          case 42: break;
+          case 43: break;
           case 4: 
             { return AWLElementType.AWL_BAD_CHARACTER;
             } 
             // fall through
-          case 43: break;
+          case 44: break;
           case 5: 
             { return AWLElementType.AWL_WHITE_SPACE;
             } 
             // fall through
-          case 44: break;
+          case 45: break;
           case 6: 
             { yybegin(YYINITIAL); return AWLElementType.AWL_DOCTYPE_END;
             } 
             // fall through
-          case 45: break;
+          case 46: break;
           case 7: 
             { return AWLElementType.AWL_COMMENT_CHARACTERS;
             } 
             // fall through
-          case 46: break;
+          case 47: break;
           case 8: 
             { // according to HTML spec (http://www.w3.org/html/wg/drafts/html/master/syntax.html#comments)
   // comments should start with <!-- and end with -->. The comment <!--> is not valid, but should terminate
@@ -728,162 +727,167 @@ public class _AWLLexer implements FlexLexer {
   return AWLElementType.AWL_COMMENT_CHARACTERS;
             } 
             // fall through
-          case 47: break;
+          case 48: break;
           case 9: 
             { yybegin(C_COMMENT_START); return AWLElementType.AWL_CONDITIONAL_COMMENT_START;
             } 
             // fall through
-          case 48: break;
+          case 49: break;
           case 10: 
             { yybegin(YYINITIAL); yypushback(1); break;
             } 
             // fall through
-          case 49: break;
+          case 50: break;
           case 11: 
             { yybegin(BEFORE_TAG_ATTRIBUTES); return AWLElementType.AWL_NAME;
             } 
             // fall through
-          case 50: break;
+          case 51: break;
           case 12: 
             { return AWLElementType.AWL_START_TAG_START;
             } 
             // fall through
-          case 51: break;
+          case 52: break;
           case 13: 
             { yybegin(TAG_ATTRIBUTES); return AWLElementType.AWL_WHITE_SPACE;
             } 
             // fall through
-          case 52: break;
+          case 53: break;
           case 14: 
             { yybegin(YYINITIAL); return AWLElementType.AWL_TAG_END;
             } 
             // fall through
-          case 53: break;
+          case 54: break;
           case 15: 
-            { return AWLElementType.AWL_NAME;
+            { return AWLElementType.AWL_ATTRIBUTE_NAME;
             } 
             // fall through
-          case 54: break;
+          case 55: break;
           case 16: 
             { yybegin(ATTRIBUTE_VALUE_START); return AWLElementType.AWL_EQ;
             } 
             // fall through
-          case 55: break;
+          case 56: break;
           case 17: 
             { yybegin(TAG_ATTRIBUTES); return AWLElementType.AWL_ATTRIBUTE_VALUE_TOKEN;
             } 
             // fall through
-          case 56: break;
+          case 57: break;
           case 18: 
             { yybegin(ATTRIBUTE_VALUE_DQ); return AWLElementType.AWL_ATTRIBUTE_VALUE_START_DELIMITER;
             } 
             // fall through
-          case 57: break;
+          case 58: break;
           case 19: 
             { yybegin(ATTRIBUTE_VALUE_SQ); return AWLElementType.AWL_ATTRIBUTE_VALUE_START_DELIMITER;
             } 
             // fall through
-          case 58: break;
+          case 59: break;
           case 20: 
             { return AWLElementType.AWL_ATTRIBUTE_VALUE_TOKEN;
             } 
             // fall through
-          case 59: break;
+          case 60: break;
           case 21: 
             { yybegin(TAG_ATTRIBUTES); return AWLElementType.AWL_ATTRIBUTE_VALUE_END_DELIMITER;
             } 
             // fall through
-          case 60: break;
+          case 61: break;
           case 22: 
             { yybegin(YYINITIAL); return AWLElementType.AWL_PI_END;
             } 
             // fall through
-          case 61: break;
+          case 62: break;
           case 23: 
             { return AWLElementType.AWL_TAG_CHARACTERS;
             } 
             // fall through
-          case 62: break;
+          case 63: break;
           case 24: 
             { yybegin(COMMENT); return AWLElementType.AWL_COMMENT_CHARACTERS;
             } 
             // fall through
-          case 63: break;
+          case 64: break;
           case 25: 
             { yybegin(COMMENT); return AWLElementType.AWL_CONDITIONAL_COMMENT_END;
             } 
             // fall through
-          case 64: break;
+          case 65: break;
           case 26: 
             { yybegin(START_TAG_NAME); yypushback(yylength());
             } 
             // fall through
-          case 65: break;
+          case 66: break;
           case 27: 
             { yybegin(PROCESSING_INSTRUCTION); return AWLElementType.AWL_PI_START;
             } 
             // fall through
-          case 66: break;
+          case 67: break;
           case 28: 
             { return AWLElementType.AWL_END_TAG_START;
             } 
             // fall through
-          case 67: break;
+          case 68: break;
           case 29: 
             { yybegin(YYINITIAL); return AWLElementType.AWL_EMPTY_ELEMENT_END;
             } 
             // fall through
-          case 68: break;
+          case 69: break;
           case 30: 
             { yybegin(COMMENT); return AWLElementType.AWL_CONDITIONAL_COMMENT_START_END;
             } 
             // fall through
-          case 69: break;
+          case 70: break;
           case 31: 
             { yybegin(END_TAG_NAME); yypushback(yylength());
             } 
             // fall through
-          case 70: break;
+          case 71: break;
           case 32: 
             { return AWLElementType.AWL_ENTITY_REF_TOKEN;
             } 
             // fall through
-          case 71: break;
+          case 72: break;
           case 33: 
             { yybegin(YYINITIAL); return AWLElementType.AWL_COMMENT_END;
             } 
             // fall through
-          case 72: break;
+          case 73: break;
           case 34: 
             { yybegin(C_COMMENT_END); return AWLElementType.AWL_CONDITIONAL_COMMENT_END_START;
             } 
             // fall through
-          case 73: break;
+          case 74: break;
           case 35: 
             { yybegin(COMMENT); return AWLElementType.AWL_COMMENT_START;
             } 
             // fall through
-          case 74: break;
+          case 75: break;
           case 36: 
             { return AWLElementType.AWL_CHAR_ENTITY_REF;
             } 
             // fall through
-          case 75: break;
-          case 37: 
-            { yybegin(YYINITIAL); return AWLElementType.AWL_BAD_CHARACTER;
-            } 
-            // fall through
           case 76: break;
-          case 38: 
-            { return AWLElementType.AWL_DOCTYPE_PUBLIC;
+          case 37: 
+            { return AWLElementType.AWL_NAME;
             } 
             // fall through
           case 77: break;
-          case 39: 
-            { yybegin(DOC_TYPE); return AWLElementType.AWL_DOCTYPE_START;
+          case 38: 
+            { yybegin(YYINITIAL); return AWLElementType.AWL_BAD_CHARACTER;
             } 
             // fall through
           case 78: break;
+          case 39: 
+            { return AWLElementType.AWL_DOCTYPE_PUBLIC;
+            } 
+            // fall through
+          case 79: break;
+          case 40: 
+            { yybegin(DOC_TYPE); return AWLElementType.AWL_DOCTYPE_START;
+            } 
+            // fall through
+          case 80: break;
           default:
             zzScanError(ZZ_NO_MATCH);
           }

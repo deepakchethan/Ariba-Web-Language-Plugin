@@ -1,7 +1,7 @@
 package com.github.deepakchethan.aribaweblanguageplugin.language.highlighter
 
-import com.github.deepakchethan.aribaweblanguageplugin.language.psi.AWLElementType
-import com.github.deepakchethan.aribaweblanguageplugin.language.psi.AWLLexerAdapter
+import com.github.deepakchethan.aribaweblanguageplugin.language.AWLElementType
+import com.github.deepakchethan.aribaweblanguageplugin.language.lexer.AWLLexerAdapter
 import com.intellij.lexer.Lexer
 import com.intellij.openapi.editor.HighlighterColors
 import com.intellij.openapi.editor.colors.TextAttributesKey
@@ -37,12 +37,12 @@ class AWLSyntaxHighlighter: SyntaxHighlighterBase() {
             }
 
             ourMap.putValues(
-                AWLElementType.AWL_TAG_NAME,
+                AWLElementType.AWL_NAME,
                 listOf(AWLHighlighterColors.AWL_TAG, AWLHighlighterColors.AWL_TAG_NAME)
             )
 
             ourMap.putValues(
-                AWLElementType.AWL_NAME,
+                AWLElementType.AWL_ATTRIBUTE_NAME,
                 listOf(AWLHighlighterColors.AWL_TAG, AWLHighlighterColors.AWL_ATTRIBUTE_NAME)
             )
 

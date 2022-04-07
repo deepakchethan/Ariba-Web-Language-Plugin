@@ -1,4 +1,4 @@
-package com.github.deepakchethan.aribaweblanguageplugin.language.psi
+package com.github.deepakchethan.aribaweblanguageplugin.language
 
 import com.github.deepakchethan.aribaweblanguageplugin.language.AWLLanguage
 import com.intellij.psi.tree.IElementType

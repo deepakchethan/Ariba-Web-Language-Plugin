@@ -1,4 +1,4 @@
-package com.github.deepakchethan.aribaweblanguageplugin.language.psi
+package com.github.deepakchethan.aribaweblanguageplugin.language.parser
 
 import com.intellij.lang.ASTNode
 import com.intellij.lang.PsiBuilder
@@ -22,7 +22,6 @@ object AWLParser: PsiParser {
         file.done(root)
     }
 
-    // to be able to manage what tags treated as single
     private fun createAWLParsingHelper(builder: PsiBuilder): AWLParsingHelper {
         return AWLParsingHelper(builder)
     }

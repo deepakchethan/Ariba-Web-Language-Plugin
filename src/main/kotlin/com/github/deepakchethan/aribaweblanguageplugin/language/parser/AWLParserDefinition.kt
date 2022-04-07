@@ -1,9 +1,9 @@
-package com.github.deepakchethan.aribaweblanguageplugin.language
+package com.github.deepakchethan.aribaweblanguageplugin.language.parser
 
-import com.github.deepakchethan.aribaweblanguageplugin.language.psi.AWLElementType
-import com.github.deepakchethan.aribaweblanguageplugin.language.psi.AWLFile
-import com.github.deepakchethan.aribaweblanguageplugin.language.psi.AWLLexerAdapter
-import com.github.deepakchethan.aribaweblanguageplugin.language.psi.AWLParser
+import com.github.deepakchethan.aribaweblanguageplugin.language.AWLLanguage
+import com.github.deepakchethan.aribaweblanguageplugin.language.AWLElementType
+import com.github.deepakchethan.aribaweblanguageplugin.language.AWLFile
+import com.github.deepakchethan.aribaweblanguageplugin.language.lexer.AWLLexerAdapter
 import com.intellij.lang.ASTNode
 import com.intellij.lang.ParserDefinition
 import com.intellij.lang.PsiParser

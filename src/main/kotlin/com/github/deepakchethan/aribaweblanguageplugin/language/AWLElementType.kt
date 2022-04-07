@@ -1,6 +1,5 @@
-package com.github.deepakchethan.aribaweblanguageplugin.language.psi
+package com.github.deepakchethan.aribaweblanguageplugin.language
 
-import com.github.deepakchethan.aribaweblanguageplugin.language.AWLLanguage
 import com.github.deepakchethan.aribaweblanguageplugin.language.psi.impl.AWLPropertyImpl
 import com.intellij.lang.ASTNode
 import com.intellij.lang.dtd.DTDLanguage
@@ -20,6 +19,7 @@ class AWLElementType(id: String): IElementType(id, AWLLanguage) {
         @JvmField var AWL_DECL: IElementType = IAWLElementType("AWL_DECL")
         @JvmField var AWL_DOCTYPE: IElementType = IAWLElementType("AWL_DOCTYPE")
         @JvmField var AWL_ATTRIBUTE: IElementType = IAWLElementType("AWL_ATTRIBUTE")
+        @JvmField var AWL_ATTRIBUTE_NAME: IElementType = IAWLElementType("AWL_ATTRIBUTE_NAME")
         @JvmField var AWL_COMMENT: IElementType = IAWLElementType("AWL_COMMENT")
         @JvmField var AWL_ELEMENT_DECL: IElementType = IAWLElementType("AWL_ELEMENT_DECL")
         @JvmField var AWL_CONDITIONAL_SECTION: IElementType = IAWLElementType("AWL_CONDITIONAL_SECTION")

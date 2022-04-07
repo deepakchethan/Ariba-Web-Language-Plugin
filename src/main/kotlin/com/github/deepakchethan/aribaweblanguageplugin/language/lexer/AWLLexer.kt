@@ -1,4 +1,4 @@
-package com.github.deepakchethan.aribaweblanguageplugin.language.psi
+package com.github.deepakchethan.aribaweblanguageplugin.language.lexer
 
 import com.github.deepakchethan.aribaweblanguageplugin.language._AWLLexer
 

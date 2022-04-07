@@ -1,5 +1,6 @@
-package com.github.deepakchethan.aribaweblanguageplugin.language.psi
+package com.github.deepakchethan.aribaweblanguageplugin.language.parser
 
+import com.github.deepakchethan.aribaweblanguageplugin.language.AWLElementType
 import com.intellij.codeInsight.completion.CompletionUtilCore
 import com.intellij.lang.PsiBuilder
 import com.intellij.openapi.util.NlsContexts.ParsingError
@@ -12,7 +13,7 @@ import com.intellij.xml.util.HtmlUtil
 import org.jetbrains.annotations.NonNls
 import java.util.*
 
-class AWLParsingHelper(builder: PsiBuilder) {
+class AWLParsingHelper(var myBuilder: PsiBuilder) {
     @NonNls
     private val TR_TAG = "tr"
 
@@ -25,7 +26,6 @@ class AWLParsingHelper(builder: PsiBuilder) {
     @NonNls
     private val TABLE_TAG = "table"
 
-    private var myBuilder: PsiBuilder = builder
     private val myTagNamesStack = Stack<String>()
     private val myOriginalTagNamesStack = Stack<String>()
     private val myTagMarkersStack = Stack<PsiBuilder.Marker>()
@@ -105,7 +105,7 @@ class AWLParsingHelper(builder: PsiBuilder) {
         doctype.done(AWLElementType.AWL_DOCTYPE)
     }
 
-    fun parseTag() {
+    private fun parseTag() {
         assert(token() === AWLElementType.AWL_START_TAG_START) { "Tag start expected" }
         var originalTagName: String
         var AWLText: PsiBuilder.Marker? = null
@@ -315,7 +315,7 @@ class AWLParsingHelper(builder: PsiBuilder) {
                 if (tt === AWLElementType.AWL_EMPTY_ELEMENT_END || tt === AWLElementType.AWL_TAG_END || tt === AWLElementType.AWL_END_TAG_START || tt === AWLElementType.AWL_START_TAG_START) break
                 advance()
             } else {
-                if (tt === AWLElementType.AWL_NAME) {
+                if (tt === AWLElementType.AWL_ATTRIBUTE_NAME) {
                     parseAttribute()
                 } else if (tt === AWLElementType.AWL_CHAR_ENTITY_REF || tt === AWLElementType.AWL_ENTITY_REF_TOKEN) {
                     parseReference()
@@ -427,7 +427,7 @@ class AWLParsingHelper(builder: PsiBuilder) {
     }
 
     private fun parseAttribute() {
-        assert(token() === AWLElementType.AWL_NAME)
+        assert(token() === AWLElementType.AWL_ATTRIBUTE_NAME)
         val att = mark()
         advance()
         if (token() === AWLElementType.AWL_EQ) {
@@ -504,7 +504,7 @@ class AWLParsingHelper(builder: PsiBuilder) {
         if (token() === AWLElementType.AWL_NAME || token() === AWLElementType.AWL_PI_TARGET) {
             advance()
         }
-        while (token() === AWLElementType.AWL_NAME) {
+        while (token() === AWLElementType.AWL_ATTRIBUTE_NAME) {
             advance()
             if (token() === AWLElementType.AWL_EQ) {
                 advance()
