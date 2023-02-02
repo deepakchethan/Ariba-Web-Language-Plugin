@@ -1,10 +1,12 @@
 package com.github.deepakchethan.aribaweblanguageplugin.language.completion
 
 import com.google.gson.Gson
+import java.util.*
 
 class AWLKeywords {
     companion object  {
         var awlKeywordMap: Map<String, List<String>> = HashMap()
+        var awlAttributeNames: ArrayList<String> = ArrayList()
 
         private fun getAWLTags(): Map<String, List<String>> {
             if (awlKeywordMap.isEmpty()) {
@@ -14,6 +16,16 @@ class AWLKeywords {
                 }
             }
             return awlKeywordMap
+        }
+
+        fun getAWLAttributes(): List<String> {
+            if (awlAttributeNames.isEmpty()) {
+                getAWLTags()
+                for (awlTagArr in awlKeywordMap.values) {
+                    awlAttributeNames.addAll(awlTagArr)
+                }
+            }
+            return awlAttributeNames
         }
 
         fun getTagNames() = getAWLTags().keys

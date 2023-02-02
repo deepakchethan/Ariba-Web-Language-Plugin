@@ -31,8 +31,8 @@ class AWLCompletionContributor : CompletionContributor() {
                     context: ProcessingContext,
                     result: CompletionResultSet
                 ) {
-                    for (awlTag in AWLKeywords.getTagNames()) {
-                        result.addElement(LookupElementBuilder.create(awlTag))
+                    for (awlAttribute in AWLKeywords.getAWLAttributes()) {
+                        result.addElement(LookupElementBuilder.create(awlAttribute))
                     }
                 }
             }

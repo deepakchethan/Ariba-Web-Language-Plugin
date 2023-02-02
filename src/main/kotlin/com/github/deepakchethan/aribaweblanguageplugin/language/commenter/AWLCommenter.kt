@@ -16,11 +16,11 @@ class AWLCommenter: EscapingCommenter {
     }
 
     override fun getBlockCommentPrefix(): String {
-        return "<!--"
+        return "<!-- "
     }
 
     override fun getBlockCommentSuffix(): String {
-        return "-->"
+        return " -->"
     }
 
     override fun getCommentedBlockCommentPrefix(): String? {
