@@ -9,28 +9,24 @@ import com.intellij.psi.formatter.common.AbstractBlock
 import java.util.*
 
 
-class AWLBlock(node: ASTNode, wrap: Wrap, alignment: Alignment, sb: SpacingBuilder, ind: Indent):
+class AWLBlock(node: ASTNode,
+               wrap: Wrap,
+               alignment: Alignment,
+               private val spacingBuilder: SpacingBuilder,
+               private val indent: Indent) :
     AbstractBlock(node, wrap, alignment) {
-    private var spacingBuilder: SpacingBuilder? = null
-    private var indent: Indent? = null
 
-    init {
-        spacingBuilder = sb
-        indent = ind
-    }
 
     override fun getSpacing(child1: Block?, child2: Block): Spacing? {
-        return spacingBuilder?.getSpacing(this, child1, child2)
+        return spacingBuilder.getSpacing(this, child1, child2)
     }
 
     override fun isLeaf(): Boolean = node.firstChildNode == null
 
-    override  fun getIndent(): Indent {
-        return indent!!
-    }
+    override fun getIndent(): Indent = indent
 
     private fun computeIndent(node: ASTNode): Indent {
-        if (node.elementType == AWLElementType.AWL_START_TAG_START) {
+        if (node.elementType == AWLElementType.AWL_TAG) {
             return Indent.getNormalIndent()
         }
         return Indent.getNoneIndent()
@@ -44,7 +40,7 @@ class AWLBlock(node: ASTNode, wrap: Wrap, alignment: Alignment, sb: SpacingBuild
                 val block: Block = AWLBlock(
                     child, Wrap.createWrap(WrapType.NONE, false),
                     Alignment.createAlignment(),
-                    spacingBuilder!!,
+                    spacingBuilder,
                     computeIndent(child)
                 )
                 blocks.add(block)

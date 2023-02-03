@@ -11,7 +11,5 @@ open class AWLCodeStyleMainPanel(currentSettings: CodeStyleSettings, settings: C
     override fun initTabs(settings: CodeStyleSettings) {
         addIndentOptionsTab(settings)
         addSpacesTab(settings)
-        addSpacesTab(settings);
-        addBlankLinesTab(settings);
     }
 }

@@ -1,15 +1,15 @@
 <idea-plugin>
-    <id>io.github.deepakchethan.language</id>
+    <id>io.github.deepakchethan.aribaweblanguage</id>
     <name>Ariba Web Language</name>
     <version>1.0</version>
     <vendor email="deepakchethan@outlook.com" url="deepakchethan.github.io">Deepak Chethan</vendor>
 
     <description><![CDATA[
-      This is a plugin that adds support to Ariba Web Language
+       Adds Ariba Web Language support to your intellij idea
     ]]></description>
 
     <change-notes><![CDATA[
-      Newly introducing a plugin for AWL, its getting annoying working with it without autocompletion and syntax checking
+      Newly introducing a plugin for AWL, it's getting annoying working with it without autocompletion and syntax checking
     ]]>
     </change-notes>
 

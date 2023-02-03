@@ -12,7 +12,6 @@ import com.intellij.psi.PsiElement
 import com.intellij.psi.util.PsiTreeUtil
 import java.util.*
 
-
 class AWLFoldingBuilder: FoldingBuilderEx(), DumbAware {
 
     override fun buildFoldRegions(root: PsiElement, document: Document, quick: Boolean): Array<FoldingDescriptor> {
@@ -25,14 +24,17 @@ class AWLFoldingBuilder: FoldingBuilderEx(), DumbAware {
 
         for (literalExpression in literalExpressions) {
             val type = literalExpression.node.elementType
+            val startOffset = literalExpression.textRange.startOffset + 1
+            val endOffset = literalExpression.textRange.endOffset - 1
 
-            if (type == AWLElementType.AWL_TAG) {
+            if (type == AWLElementType.AWL_TAG
+                && startOffset < endOffset) {
                 descriptors.add(
                     FoldingDescriptor(
                         literalExpression.node,
                         TextRange(
-                            literalExpression.textRange.startOffset + 1,
-                            literalExpression.textRange.endOffset - 1
+                            startOffset,
+                            endOffset
                         )
                     )
                 )

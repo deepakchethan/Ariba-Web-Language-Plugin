@@ -1,7 +1,5 @@
 package com.github.deepakchethan.aribaweblanguageplugin.language
 
-import com.github.deepakchethan.aribaweblanguageplugin.language.AWLFileType
-import com.github.deepakchethan.aribaweblanguageplugin.language.AWLLanguage
 import com.intellij.extapi.psi.PsiFileBase
 import com.intellij.openapi.fileTypes.FileType
 import com.intellij.psi.FileViewProvider
