@@ -17,12 +17,13 @@ import com.intellij.psi.tree.IFileElementType
 import com.intellij.psi.tree.TokenSet
 
 class AWLParserDefinition: ParserDefinition {
+    var fileType = IFileElementType(AWLLanguage)
 
     override fun createLexer(project: Project?): Lexer = AWLLexerAdapter
 
     override fun createParser(project: Project?): PsiParser = AWLParser
 
-    override fun getFileNodeType(): IFileElementType = IFileElementType(AWLLanguage)
+    override fun getFileNodeType(): IFileElementType = fileType
 
     override fun getCommentTokens(): TokenSet = TokenSet.create(AWLElementType.AWL_COMMENT)
 
