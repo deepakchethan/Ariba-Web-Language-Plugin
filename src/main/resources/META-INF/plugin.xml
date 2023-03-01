@@ -53,9 +53,9 @@
         <langCodeStyleSettingsProvider
                 implementation="com.github.deepakchethan.aribaweblanguageplugin.language.codestyle.AWLLanguageCodeStyleSettingsProvider"/>
 
-        <lang.formatter
-                language="Awl"
-                implementationClass="com.github.deepakchethan.aribaweblanguageplugin.language.formatter.AWLFormattingModelBuilder"/>
+<!--        <lang.formatter-->
+<!--                language="Awl"-->
+<!--                implementationClass="com.github.deepakchethan.aribaweblanguageplugin.language.formatter.AWLFormattingModelBuilder"/>-->
 
         <lang.foldingBuilder
                 language="Awl"
